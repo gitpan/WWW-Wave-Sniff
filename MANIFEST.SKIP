@@ -1,0 +1,6 @@
+\.shipit
+\.git
+Makefile.old
+Makefile
+.*~
+
