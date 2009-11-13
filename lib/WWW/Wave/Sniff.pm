@@ -50,7 +50,7 @@ use LWP::UserAgent;
 use Readonly;
 use JSON;
 
-our $VERSION = '0.1_001';
+our $VERSION = '0.1_002';
 
 # properties:
 has 'username' => (
@@ -112,10 +112,6 @@ sub get_wave_info{
     $ib_rsp->is_success or die 'Could not get wave inbox: '
                                . $ib_rsp->status_line;
 
-    open(DUMP, '>', 'two.html');
-    print DUMP $ib_rsp->content;
-    close( DUMP );
-
     # pull the JSON string out of the response:
     my $json_string = _grab_json( $ib_rsp->content );
 
@@ -143,6 +139,13 @@ sub get_wave_info{
     return { unread => $unread };
 }
 
+=head2 unread_count
+
+Probes your wave account and extracts the number of unread waves.
+
+Should hopefully die with a useful message on errors.
+
+=cut
 sub unread_count{
     my $self = shift;
 

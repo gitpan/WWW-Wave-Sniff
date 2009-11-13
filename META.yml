@@ -24,4 +24,4 @@ requires:
   Readonly: 1.03
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.1_001
+version: 0.1_002
