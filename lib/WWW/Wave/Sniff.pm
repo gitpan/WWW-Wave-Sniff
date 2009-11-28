@@ -50,7 +50,7 @@ use LWP::UserAgent;
 use Readonly;
 use JSON;
 
-our $VERSION = '0.1_002';
+our $VERSION = '0.1';
 
 # properties:
 has 'username' => (
